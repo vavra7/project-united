@@ -1,0 +1,32 @@
+{
+  "name": "project-united",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vavra7/project-united.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vavra7/project-united/issues"
+  },
+  "homepage": "https://github.com/vavra7/project-united#readme",
+  "dependencies": {
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.6",
+    "@types/react": "^16.9.35",
+    "typescript": "^3.9.3"
+  }
+}
