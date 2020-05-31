@@ -12,4 +12,8 @@ services:
     volumes:
       - type: bind
         source: ./
-        target: /app
+        target: /usr/src/app
+      - type: volume
+        target: /usr/src/app/node_modules
+      - type: volume
+        target: /usr/src/app/.next

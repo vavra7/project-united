@@ -1,13 +1,8 @@
 FROM node:14.3
-WORKDIR /app
-# COPY package*.json ./
-COPY package.json ./
-COPY yarn.lock ./
-# RUN npm install
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY package.json /usr/src/app/
+COPY yarn.lock /usr/src/app/
 RUN yarn
-COPY src .
-COPY tsconfig.json .
-COPY next-env.d.ts .
-# RUN npm run build
-RUN yarn build
+EXPOSE 3000
 CMD ["yarn", "dev"]

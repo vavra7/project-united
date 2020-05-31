@@ -1,3 +1,5 @@
 export default () => {
-  return <div>test</div>;
+  console.log('asf')
+
+  return <div>tehustýýst</div>;
 };

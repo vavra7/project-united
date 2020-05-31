@@ -1,0 +1,18 @@
+{
+  "presets": [["next/babel"]],
+  "plugins": [
+    [
+      "console-source",
+      {
+        "segments": 2,
+        "splitSegment": "/"
+      }
+    ],
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
+  ]
+}
