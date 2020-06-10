@@ -1,28 +1,16 @@
-import { Resolver, Query } from "type-graphql";
-import { ApolloServer } from "apollo-server-micro";
-import { buildSchema } from "type-graphql";
-import "reflect-metadata";
-
-@Resolver()
-class HelloResolver {
-  @Query(() => String)
-  hello() {
-    return "hello";
-  }
-}
+import { ApolloServer, gql, makeExecutableSchema } from 'apollo-server-micro';
+import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
+import { addResolversToSchema } from '@graphql-tools/schema';
+import { loadSchemaSync } from '@graphql-tools/load';
+import { schema } from '../../graphql';
+// import { schemaWithResolvers } from '../../graphql';
 
 export const config = {
   api: {
-    bodyParser: false,
-  },
+    bodyParser: false
+  }
 };
 
-export default (async () => {
-  const schema = await buildSchema({
-    resolvers: [HelloResolver],
-  });
-
-  const apolloServer = new ApolloServer({ schema });
-
-  return apolloServer.createHandler({ path: "/api/graphql" });
-})();
+export default new ApolloServer({ schema }).createHandler({
+  path: '/api/graphql'
+});
