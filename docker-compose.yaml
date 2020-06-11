@@ -1,19 +1,17 @@
-version: "3.8"
+version: '3.8'
 
-services: 
-  app:
+services:
+  next-js:
+    image: vavra/project-united_next-js
     container_name: project-united_next-js
-    image: vavra/project-united_next-js 
-    ports: 
-      - "3000:3000"
-    build: 
+    build:
       context: ./
       dockerfile: Dockerfile
+      args:
+        NODE_VERSION: 14.4
+    ports:
+      - '3000:3000'
     volumes:
       - type: bind
         source: ./
         target: /usr/src/app
-      - type: volume
-        target: /usr/src/app/node_modules
-      - type: volume
-        target: /usr/src/app/.next

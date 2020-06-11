@@ -1,8 +1,13 @@
-FROM node:14.3
-RUN mkdir -p /usr/src/app
+ARG NODE_VERSION
+
+
+FROM node:${NODE_VERSION}
+
 WORKDIR /usr/src/app
+
 COPY package.json /usr/src/app/
 COPY yarn.lock /usr/src/app/
+
 RUN yarn
-EXPOSE 3000
+
 CMD ["yarn", "dev"]

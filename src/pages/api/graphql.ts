@@ -1,4 +1,4 @@
-import { ApolloServer, gql, makeExecutableSchema } from 'apollo-server-micro';
+import { ApolloServer } from 'apollo-server-micro';
 import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
 import { addResolversToSchema } from '@graphql-tools/schema';
 import { loadSchemaSync } from '@graphql-tools/load';

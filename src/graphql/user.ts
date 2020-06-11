@@ -12,5 +12,5 @@ export const typeDefs = gql`
 `;
 
 export const resolvers = {
-  user: () => ({ id: 'asdfadsf', name: 'user' })
+  user: () => ({ id: 'some_id', name: 'user' })
 };
