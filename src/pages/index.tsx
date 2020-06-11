@@ -1,11 +1,4 @@
-import { ApolloClient } from 'apollo-client';
-import { HttpLink } from 'apollo-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
 import gql from 'graphql-tag';
-import { SchemaLink } from 'apollo-link-schema';
-// import { schemaWithResolvers as schema } from '../graphql';
-import { schema } from '../graphql';
-// import { schema } from '../graphql';
 import Link from 'next/link';
 import { getApolloClient } from '../lib/apolloClient';
 
@@ -22,6 +15,8 @@ const variables = {
 };
 
 const index: React.FC = props => {
+  const a = 'adsf';
+
   return (
     <div>
       <Link href="/pes">
@@ -42,19 +37,5 @@ index.getInitialProps = async ({ req }) => {
 
   return { cache: apolloClient!.cache.extract() };
 };
-
-// export async function getStaticProps() {
-//   const apolloClient = getApolloClient()
-
-//   await apolloClient!.query({
-//     query: USER_QUERY
-//   });
-
-//   return {
-//     props: {
-//       cache: apolloClient!.cache.extract(),
-//     },
-//   };
-// }
 
 export default index;

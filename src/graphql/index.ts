@@ -1,4 +1,4 @@
-import { gql, makeExecutableSchema } from 'apollo-server';
+import { gql, makeExecutableSchema } from 'apollo-server-micro';
 import { typeDefs as User, resolvers as userResolvers } from './user';
 import { typeDefs as Vehicle, resolvers as vehicleResolvers } from './vehicle';
 
