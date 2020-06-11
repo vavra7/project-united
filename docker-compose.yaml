@@ -9,6 +9,9 @@ services:
       dockerfile: Dockerfile
       args:
         NODE_VERSION: 14.4
+    environment: 
+      GQL_NETWORK_URL: http://next-js:3000/api/graphql
+      GQL_PUBLIC_URL: http://localhost:3000/api/graphql
     ports:
       - '3000:3000'
     volumes:
